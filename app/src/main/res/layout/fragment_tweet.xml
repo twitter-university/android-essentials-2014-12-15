@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TweetActivity$PlaceholderFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/twitter_blue"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        android:text="@string/label_tweet"
+        />
+
+    <TextView
+        android:id="@+id/tweet_count"
+        android:text="@string/tweet_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textColor="@color/count_ok"
+        />
+
+    <EditText
+        android:hint="@string/tweet_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:background="@color/fog"
+        />
+
+    <Button
+        android:text="@string/label_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/twitter_blue"
+        />
+
+</LinearLayout>

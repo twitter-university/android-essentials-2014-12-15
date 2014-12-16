@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="count_ok">#009900</color>
+
+    <color name="fog">#66aaaaaa</color>
+    <color name="twitter_blue">#55acee</color>
+
+</resources>
