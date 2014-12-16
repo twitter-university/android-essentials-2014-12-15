@@ -11,10 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/twitter_blue"
-        android:textSize="64sp"
-        android:textStyle="bold"
         android:text="@string/label_tweet"
+        style="@style/YambaText.Label"
         />
 
     <TextView
@@ -43,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/twitter_blue"
+        style="@style/YambaText"
         />
 
 </LinearLayout>
