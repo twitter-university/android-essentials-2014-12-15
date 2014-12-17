@@ -19,43 +19,9 @@ import android.widget.Toast;
 
 public class TweetFragment extends Fragment {
 
-    private class Poster extends AsyncTask<String, Void, Integer> {
-
-        @Override
-        protected Integer doInBackground(String... post) {
-            String tweet = post[0];
-
-            // Emulation
-            int msg = R.string.tweet_failed;
-            try {
-                Thread.sleep( 3 * 1000 );
-                msg = R.string.tweet_succeeded;
-            }
-            catch (InterruptedException e) { }
-
-            return Integer.valueOf(msg);
-        }
-
-        @Override
-        protected void onCancelled() { finish(R.string.tweet_failed); }
-
-        @Override
-        protected void onPostExecute(Integer msg) { finish(msg.intValue()); }
-
-        private void finish(int msg) {
-            Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
-            poster = null;
-            updateCount();
-        }
-    }
-
-
-
     public static TweetFragment newInstance() {
         return new TweetFragment();
     }
-
-    private static Poster poster;
 
     private int tweetMaxLen;
     private int tweetWarnLen;
@@ -131,8 +97,7 @@ public class TweetFragment extends Fragment {
         String tweet = tweetView.getText().toString();
         if (!canPost(tweetMaxLen - tweet.length())) { return; }
 
-        poster = new Poster();
-        poster.execute(tweet);
+        YambaService.post(getActivity(), tweet);
 
         tweetView.setText("");
         updateCount();
@@ -140,6 +105,6 @@ public class TweetFragment extends Fragment {
     }
 
     private boolean canPost(int n) {
-      return (null == poster) && ((n >= tweetMinLen) && (n < tweetMaxLen));
+      return (n >= tweetMinLen) && (n < tweetMaxLen);
     }
 }
