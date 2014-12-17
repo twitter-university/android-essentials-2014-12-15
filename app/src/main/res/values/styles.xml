@@ -1,10 +1,15 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="yambaPrimary">@color/primary</item>
+        <item name="yambaSecondary">@color/secondary</item>
+        <item name="yambaAccent">@color/accent</item>
+    </style>
+
 
     <style name="YambaText">
-        <item name="android:textColor">@color/secondary</item>
+        <item name="android:textColor">?yambaSecondary</item>
     </style>
 
     <style name="YambaText.Label">
