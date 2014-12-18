@@ -3,15 +3,17 @@
 
     <!-- Application -->
     <string name="app_name">Yamba</string>
-    <string name="action_settings">Settings</string>
+    <string name="about">Yamba!\n    Dec 17 2014 Android Essentials\n      Happy Holiday!</string>
+    <string name="larry">larry</string>
 
     <!-- Tweet page -->
     <string name="label_tweet">Tweet</string>
     <string name="tweet_count">140</string>
     <string name="tweet_hint">\'sup?</string>
     <string name="label_submit">Submit</string>
-    <string name="tweet_succeeded">Tweet succeeded!</string>
-    <string name="tweet_failed">Tweet failed!</string>
 
+    <!-- Timeline page -->
+    <string name="label_timeline">Timeline</string>
+    <string name="label_about">About</string>
 
 </resources>

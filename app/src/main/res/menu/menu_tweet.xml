@@ -1,9 +1,23 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context=".TweetActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".YambaActivity">
+
+    <item
+        android:id="@+id/menu_tweet"
+        android:title="@string/label_tweet"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_timeline"
+        android:title="@string/label_timeline"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_about"
+        android:title="@string/label_about"
+        android:orderInCategory="100"
+        android:showAsAction="never"/>
 </menu>

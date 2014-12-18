@@ -5,7 +5,6 @@ package com.twitter.university.android.yamba;
 
 import android.app.Fragment;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class TweetFragment extends Fragment {
@@ -22,6 +20,9 @@ public class TweetFragment extends Fragment {
     public static TweetFragment newInstance() {
         return new TweetFragment();
     }
+
+
+    private YambaServiceHelper helper;
 
     private int tweetMaxLen;
     private int tweetWarnLen;
@@ -35,10 +36,11 @@ public class TweetFragment extends Fragment {
     private TextView countView;
     private View submitButton;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        helper = new YambaServiceHelper(getActivity());
 
         Resources rez = getActivity().getResources();
 
@@ -52,7 +54,7 @@ public class TweetFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
         View rootView = inflater.inflate(R.layout.fragment_tweet, container, false);
 
         tweetView = (EditText) rootView.findViewById(R.id.tweet_tweet);
@@ -92,16 +94,14 @@ public class TweetFragment extends Fragment {
         countView.setTextColor(countColor);
     }
 
-
     void post() {
         String tweet = tweetView.getText().toString();
+
         if (!canPost(tweetMaxLen - tweet.length())) { return; }
 
-        YambaService.post(getActivity(), tweet);
+        helper.post(tweet);
 
         tweetView.setText("");
-        updateCount();
-
     }
 
     private boolean canPost(int n) {

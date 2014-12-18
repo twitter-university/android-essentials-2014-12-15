@@ -7,10 +7,6 @@
     <color name="accent">#292f33</color>
     <color name="secondary">#66757f</color>
 
-    <color name="primary_nite">#55acee</color>
-    <color name="accent_nite">#292f33</color>
-    <color name="secondary_nite">#66757f</color>
-
     <color name="count_ok">#008800</color>
     <color name="count_warn">#ffbb00</color>
     <color name="count_err">#ff0000</color>
