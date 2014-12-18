@@ -20,7 +20,7 @@ public class YambaServiceHelper {
 
     public void post(String tweet) {
         Intent i = new Intent(YambaContract.Service.ACTION_EXECUTE);
-        i.setPackage("com.twitter.university.android.yamba.service");
+        i.setPackage(YambaContract.Service.PACKAGE);
         i.putExtra(YambaContract.Service.PARAM_OP, YambaContract.Service.OP_POST);
         i.putExtra(YambaContract.Service.PARAM_TWEET, tweet);
         ctxt.startService(i);

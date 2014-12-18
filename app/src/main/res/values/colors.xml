@@ -4,8 +4,8 @@
     <color name="fog">#66aaaaaa</color>
 
     <color name="primary">#55acee</color>
-    <color name="accent">#292f33</color>
     <color name="secondary">#66757f</color>
+    <color name="accent">#292f33</color>
 
     <color name="count_ok">#008800</color>
     <color name="count_warn">#ffbb00</color>

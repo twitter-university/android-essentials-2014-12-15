@@ -4,6 +4,8 @@
 
 
     <uses-permission
+        android:name="com.twitter.university.android.yamba.timeline.permission.READ" />
+    <uses-permission
         android:name="com.twitter.university.android.yamba.service.permission.EXECUTE" />
 
     <application

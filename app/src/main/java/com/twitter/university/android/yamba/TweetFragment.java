@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,11 @@ public class TweetFragment extends Fragment {
         colorOk = rez.getColor(R.color.count_ok);
         colorWarn = rez.getColor(R.color.count_warn);
         colorError = rez.getColor(R.color.count_err);
+
+        // get a themed color
+        TypedValue typedValue = new TypedValue();
+        getActivity().getTheme().resolveAttribute(R.attr.yambaAccent, typedValue, true);
+        int color = typedValue.data;
     }
 
     @Override

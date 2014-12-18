@@ -14,6 +14,9 @@ public class YambaContract {
     public static class Service {
         private Service() {}
 
+        public static final String PACKAGE
+            = "com.twitter.university.android.yamba.service";
+
         // Call to the Yamba Service
         public static final String ACTION_EXECUTE
             = "com.twitter.university.android.yamba.service.action.EXECUTE";
