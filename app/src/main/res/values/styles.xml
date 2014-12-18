@@ -11,6 +11,18 @@
         <item name="android:textColor">?yambaSecondary</item>
     </style>
 
+    <style name="YambaText.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="YambaText.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="YambaText.Medium">
+        <item name="android:textSize">48sp</item>
+    </style>
+
     <style name="YambaText.Label">
         <item name="android:textSize">64sp</item>
         <item name="android:textStyle">bold</item>

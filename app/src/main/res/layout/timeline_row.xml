@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        style="@style/YambaText.Bold"
         />
 
     <TextView
@@ -18,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
+        style="@style/YambaText.Italic"
         />
 
     <TextView
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/timeline_handle"
         android:layout_alignParentLeft="true"
+        style="@style/YambaText"
         />
 
 </RelativeLayout>

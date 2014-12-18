@@ -1,12 +1,9 @@
-/*
- * Copyright (c) 2014 Twitter Inc.
- */
 package com.twitter.university.android.yamba;
 
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,6 +11,7 @@ import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -92,5 +90,18 @@ public class TimelineFragment extends ListFragment implements LoaderManager.Load
         getLoaderManager().initLoader(TIMELINE_LOADER, null, this);
 
         return rootView;
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int p, long id) {
+        Cursor c = (Cursor) l.getItemAtPosition(p);
+
+        Intent i = TimelineDetailFragment.marshallDetails(
+            getActivity(),
+            c.getLong(c.getColumnIndex(YambaContract.Timeline.Columns.TIMESTAMP)),
+            c.getString(c.getColumnIndex(YambaContract.Timeline.Columns.HANDLE)),
+            c.getString(c.getColumnIndex(YambaContract.Timeline.Columns.TWEET)));
+
+        startActivity(i);
     }
 }
